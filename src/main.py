@@ -10,3 +10,6 @@ def divide(x, y):
 def calculate_log(x, base):
     return math.log(x, base)
  
+
+def reverse_string(string):
+    return string[::-1]
