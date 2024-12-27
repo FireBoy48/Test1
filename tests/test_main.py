@@ -1,6 +1,6 @@
 from src.main import divide
 from src.main import calculate_log as calc_log
-
+import pytest
 
 def test_divide():
     assert divide(1, 1) == 1
@@ -11,5 +11,10 @@ def test_divide():
 def test_calc_log():
     assert calc_log(8, 2) == 3.0
 
+    with pytest.raises(ValueError):
+        calc_log(0, 2)
+
+    with pytest.raises(ValueError):
+        calc_log(2, 0)
 
 
