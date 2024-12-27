@@ -17,10 +17,18 @@ def test_calc_log():
         calculate_log(2, 0)
 
 
-def test_reverse_string_numbers(numbers):
-    assert reverse_string('123') == numbers
+@pytest.mark.parametrize('value, expected',[
+                         ('123', '321'),
+                         ('hello', 'olleh'),
+                         ('world', 'dlrow')
+                         ])
+def test_reverse_string(value, expected):
+    assert reverse_string(value) == expected
 
-
-def test_reverse_string_letters(letters):
-    assert reverse_string('hello') == letters
+# def test_reverse_string_numbers(numbers):
+#     assert reverse_string('123') == numbers
+#
+#
+# def test_reverse_string_letters(letters):
+#     assert reverse_string('hello') == letters
 
